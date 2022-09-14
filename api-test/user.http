@@ -1,0 +1,97 @@
+@resourcesPath = users
+@accessToken = {{loginAdmin.response.body.$.data.accessToken}}
+
+### Login as Admin
+
+# @name loginAdmin
+POST {{apiBaseUrl}}/{{resourcesPath}}/login
+Content-Type: application/json
+
+{
+    "username": "admin",
+    "password": "admin"
+}
+
+
+### Register as Admin
+
+POST {{apiBaseUrl}}/{{resourcesPath}}/register-admin
+Content-Type: application/json
+
+{
+
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "username": "admin",
+    "password": "admin",
+    "dateOfBirth": "12/12/2012",
+    "contact": "+919999999999",
+    "email": "admin@gmail.com"
+}
+
+
+### Register as Patient
+
+POST {{apiBaseUrl}}/{{resourcesPath}}/register-patient
+Content-Type: application/json
+
+{
+
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "username": "patient",
+    "password": "patient",
+    "dateOfBirth": "12/12/2012",
+    "contact": "+919999999999",
+    "email": "patient@gmail.com",
+    "city": "iefi",
+    "address": "iefi"
+}
+
+
+### Get Current User
+
+GET {{apiBaseUrl}}/{{resourcesPath}}/me
+Authorization: Bearer {{accessToken}}
+
+
+### Get Users
+
+GET {{apiBaseUrl}}/{{resourcesPath}}
+Authorization: Bearer {{accessToken}}
+
+
+### Update User
+
+PUT {{apiBaseUrl}}/{{resourcesPath}}/c710d73f-93f4-4200-ac30-52c51b1b85c2
+Authorization: Bearer {{accessToken}}
+Content-Type: application/json
+
+{
+
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "username": "yoyo.user",
+    "password": "admin",
+    "dateOfBirth": "12/12/2012",
+    "contact": "+919999999999",
+    "email": "admin@gmail.com"
+}
+
+
+### Delete User with Id
+
+DELETE {{apiBaseUrl}}/{{resourcesPath}}/a636b544-e13f-4df0-b104-8706408152bc
+Authorization: Bearer {{accessToken}}
+
+
+### Delete Users with Ids
+
+DELETE {{apiBaseUrl}}/{{resourcesPath}}?ids=76bdf048-9905-4c31-9e1b-68fe4c92127a,76bdf048-9905-4c31-9e1b-68fe4c92127a
+Authorization: Bearer {{accessToken}}
+
+
+### Delete All Users
+
+DELETE {{apiBaseUrl}}/{{resourcesPath}}
+Authorization: Bearer {{accessToken}}

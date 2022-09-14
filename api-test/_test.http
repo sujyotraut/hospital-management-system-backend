@@ -1,0 +1,31 @@
+@resourcesPath = test
+@accessToken = {{loginAdmin.response.body.$.data.accessToken}}
+
+
+### Login as Admin
+
+# @name loginAdmin
+POST {{apiBaseUrl}}/users/login
+Content-Type: application/json
+
+{
+    "username": "admin",
+    "password": "admin"
+}
+
+
+### Test
+
+POST {{apiBaseUrl}}/{{resourcesPath}}/
+Content-Type: application/json
+
+{
+    "name": "name",
+    "status": "name",
+    "price": 50,
+    "password": "pass",
+    "efef": "pass",
+    "eefafef": "pass",
+    "description": "pass",
+    "companyName": "eif"
+}

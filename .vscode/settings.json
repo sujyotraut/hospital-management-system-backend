@@ -1,0 +1,13 @@
+{
+  "files.exclude": {
+    "node_modules": true,
+    ".vscode": true
+  },
+
+  "rest-client.environmentVariables": {
+    "$shared": {},
+    "development": {
+      "apiBaseUrl": "http://localhost:4000"
+    }
+  }
+}

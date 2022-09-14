@@ -1,0 +1,95 @@
+@resourcesPath = doctors
+
+### Get Doctors
+
+GET {{apiBaseUrl}}/{{resourcesPath}}
+Authorization: Bearer {{$dotenv DEV_ACCESS_TOKEN}}
+
+
+### Get Doctors (Sorted)
+
+GET {{apiBaseUrl}}/{{resourcesPath}}?_sort=firstName&_order=asc
+Authorization: Bearer {{$dotenv DEV_ACCESS_TOKEN}}
+
+
+### Get Doctors (Filter)
+
+GET {{apiBaseUrl}}/{{resourcesPath}}?email=gmail.com
+Authorization: Bearer {{$dotenv DEV_ACCESS_TOKEN}}
+
+
+### Get Doctors (Pagination)
+
+GET {{apiBaseUrl}}/{{resourcesPath}}?_page=1&_limit=3
+Authorization: Bearer {{$dotenv DEV_ACCESS_TOKEN}}
+
+
+### Get Doctors with Sort, Filter & Pagination
+
+GET {{apiBaseUrl}}/{{resourcesPath}}?_page=1&_limit=3&_sort=email&_order=desc&email=yahoo.com
+Authorization: Bearer {{$dotenv DEV_ACCESS_TOKEN}}
+
+
+### Get Doctor With Id
+
+GET {{apiBaseUrl}}/{{resourcesPath}}/14d32190-a31f-4f0a-a5a6-e6f636387584
+Authorization: Bearer {{$dotenv DEV_ACCESS_TOKEN}}
+
+
+### Add Doctor
+
+POST {{apiBaseUrl}}/{{resourcesPath}}
+Authorization: Bearer {{$dotenv DEV_ACCESS_TOKEN}}
+Content-Type: application/json
+
+{
+    "firstName": "Demond",
+    "lastName": "Ziemann",
+    "username": "yello.Ziemann",
+    "password": "nzJtlui6gkeKWCi",
+    "dateOfBirth": "2/11/1953",
+    "contact": "+913713386411",
+    "email": "Demond.Ziemann@yahoo.com",
+    "qualifications": "MBBS",
+    "specialization": "None",
+    "experience": "2 Years"
+}
+
+
+### Update Doctor
+
+PUT {{apiBaseUrl}}/{{resourcesPath}}/721544bb-f436-4b35-99ac-00cd7a0c3796
+Authorization: Bearer {{$dotenv DEV_ACCESS_TOKEN}}
+Content-Type: application/json
+
+{
+    "firstName": "Yo",
+    "lastName": "Ziemann",
+    "username": "green.Ziemann",
+    "password": "nzJtlui6gkeKWCi",
+    "dateOfBirth": "2/11/1953",
+    "contact": "+913713386411",
+    "email": "Demond.Ziemann@yahoo.com",
+    "qualifications": "MBBS",
+    "specialization": "None",
+    "experience": "2 Years"
+}
+
+
+### Delete Doctor with Id
+
+DELETE {{apiBaseUrl}}/{{resourcesPath}}/c2eb1b51-5ce6-4c2e-a2d4-8bd54a0c7ebc
+Authorization: Bearer {{$dotenv DEV_ACCESS_TOKEN}}
+
+
+### Delete Doctors with Ids
+
+DELETE {{apiBaseUrl}}/{{resourcesPath}}?ids=f0f1c7a0-f7fa-4109-ae59-cd176c2fa262,da185704-6b6b-4393-aa8b-c9e2884713fd,35013025-8e55-4f6d-a4c5-cd49e8e8ca48
+Authorization: Bearer {{$dotenv DEV_ACCESS_TOKEN}}
+
+
+### Delete Doctors
+
+DELETE {{apiBaseUrl}}/{{resourcesPath}}
+Authorization: Bearer {{$dotenv DEV_ACCESS_TOKEN}}
+
